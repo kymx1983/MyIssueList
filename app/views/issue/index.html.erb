@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <title>Contact Form</title>
+  <meta charset="utf-8">
+  <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+</head>
+<body>
+<div class="main">
+  <% @issues.each do |issue| %>
+    <div class="container">
+      <div><%= issue.title %></div>
+      <br>
+
+      <wrap class="btn btn-flat-border">
+        <%= link_to("詳細", "/issue/show/#{issue.id}") %>
+      </wrap>
+      <wrap class="btn btn-flat-border">
+        <%= link_to("編集", "/issue/edit/#{issue.id}") %>
+      </wrap>
+      <wrap class="btn btn-flat-border">
+        <%= link_to("削除", "/issue/destroy/#{issue.id}") %>
+      </wrap>
+    </div>
+  <% end %>
+</div>
+</body>
+</html>

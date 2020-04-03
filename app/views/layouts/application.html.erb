@@ -9,8 +9,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
+<body>
 <header>
   <ul>
+    <% if @current_user %>
+      <li><%= link_to("#{@current_user.user_name} さん", "/user/show/#{@current_user.id}") %></li>
+    <% end %>
     <li><a href="/issue/new">課題登録</a></li>
     <li><a href="/issue/index">課題一覧</a></li>
     <li><a href="/">トップ</a></li>

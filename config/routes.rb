@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "/login" => "user#login"
   post "/login" => "user#login_check"
+  post "/logout" => "user#logout"
 
   get "user/index" => "user#index"
   get "user/show/:id" => "user#show"

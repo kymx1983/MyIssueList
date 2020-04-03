@@ -22,6 +22,11 @@ class UserController < ApplicationController
     end
   end
 
+  def logout
+    session[:login_id] = nil
+    redirect_to("/login")
+  end
+
   def show
     @user = User.find_by(id:params[:id])
   end

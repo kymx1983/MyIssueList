@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/" => "issue#index"
+  root "issue#index"
 
   get "/login" => "user#login"
   post "/login" => "user#login_check"
